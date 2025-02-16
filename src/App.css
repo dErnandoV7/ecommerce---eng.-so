@@ -12,6 +12,7 @@
     --cinza-2: #3e3e3e;
     --cinza-3: #1b1b1b;
     --verde-1: #04d404;
+    --verde-2: #cff9cf;
     --roxo-1: #ce17ce;
     --roxo-2: #ce17ce26;
     --roxo-3: #facffa;
@@ -84,8 +85,8 @@
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
-    width: 150px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     border: none;
     font: normal 16px/1 "Times New Roman", Times, serif;
     color: rgba(255, 255, 255, 1);

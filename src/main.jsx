@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.jsx'
 
 import Main from './router/Main.jsx'
+import Login from './router/Login.jsx'
 
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import { EcommerceContextProvider } from './context/ecommerceContext.jsx'
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Main />,
+      },
+      {
+        path: "/login",
+        element: <Login/>
       }
     ],
   },

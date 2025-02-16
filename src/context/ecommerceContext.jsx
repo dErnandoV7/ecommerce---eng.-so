@@ -7,7 +7,8 @@ const { dados } = getAllProducts()
 
 const initialState = {
     todosProdutos: [],
-    produtosBuscados: []
+    produtosBuscados: [],
+    logado: false
 };
 
 

@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { useEcommerce } from "../Hooks/useEcommerContext"
+import { Link } from "react-router-dom";
 
 import "./HeaderTop.css"
 const HeaderTop = () => {
@@ -28,7 +29,7 @@ const HeaderTop = () => {
                     <i className="fa-solid fa-circle-question"></i>
                     <p><span>Atendimento </span> <strong>e Suporte</strong></p>
                 </div>
-                <button onClick={() => dispatch({type: "VER_STATE"})}><i className="fa-solid fa-right-to-bracket"></i> Entrar</button>
+                <Link to={"/login"}><button onClick={() => dispatch({type: "VER_STATE"})}><i className="fa-solid fa-right-to-bracket"></i> Entrar</button></Link>
             </div>
         </div>
     )

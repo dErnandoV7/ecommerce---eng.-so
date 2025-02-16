@@ -1,0 +1,34 @@
+body {
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.blob {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(45deg, #04d404, #008000, #03cb03);
+  border-radius: 60% 60% 0 0;
+  animation: wave 6s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateY(0) scaleX(1);
+  }
+  25% {
+    transform: translateY(-5px) scaleX(1.05);
+  }
+  50% {
+    transform: translateY(0) scaleX(1);
+  }
+  75% {
+    transform: translateY(-5px) scaleX(1.05);
+  }
+  100% {
+    transform: translateY(0) scaleX(1);
+  }
+}

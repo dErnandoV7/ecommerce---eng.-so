@@ -1,0 +1,70 @@
+.login-section {
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
+    min-height: 100vh;
+}
+
+.login {
+    width: 100%;
+    max-width: 600px;
+}
+
+.login h1 {
+    font-size: 46px;
+    color: var(--verde-1);
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+.login p {
+    font-size: 13px;
+    color: #6e6e6e;
+    text-align: center;
+}
+
+.login form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.login form label {
+    display: flex;
+    max-width: 350px;
+    width: 100%;
+}
+
+.login form label input {
+    flex: 1;
+    border-radius: 0px 4px 4px 0px;
+    outline: none;
+    height: 50px;
+    font-size: 14px;
+    border: 1px solid var(--verde-2);
+    padding: 8px 8px 8px 14px;
+}
+
+.login form label i {
+    width: 50px;
+    padding: 15px 0px;
+    font-size: 18px;
+    background: var(--verde-2);
+    color: var(--verde-1);
+    text-align: center;
+    border-radius: 4px 0px 0px 4px;
+}
+
+.login .sem-conta {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.login .sem-conta span {
+    color: var(--roxo-1);
+    font-weight: bolder;
+}
