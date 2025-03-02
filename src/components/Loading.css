@@ -1,0 +1,34 @@
+.carregando-container {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.296);
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    backdrop-filter: blur(1px);
+    z-index: 1;
+  }
+  
+  .carregando-container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .carregando {
+    width: 25px;
+    height: 25px;
+    border: 6px solid #fff;
+    border-top: 6px solid transparent;
+    border-radius: 50%;
+    animation: spin 2s infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }

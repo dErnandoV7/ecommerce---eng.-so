@@ -1,9 +1,6 @@
 import { createContext, useReducer } from "react";
-import { getAllProducts } from "../db/getAllProducts";
 
 export const EcommerceContext = createContext();
-
-const { dados } = getAllProducts()
 
 const initialState = {
     todosProdutos: [],
@@ -30,6 +27,12 @@ const EcommerceReducer = (state, action) => {
                 produtosBuscados: newProdutosProcurados
             }
 
+        case "SET_LOGADO":
+            return {
+                ...state,
+                logado: true
+            }
+            
         case "VER_STATE":
             console.log(state)
 

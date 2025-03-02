@@ -4,23 +4,27 @@ import { getAllProducts } from "../db/getAllProducts";
 import Produto from "./Produto"
 
 import "./Produtos.css"
+import { useNavigate } from "react-router-dom";
 
 const Produtos = () => {
     const [state, dispatch] = useEcommerce();
+    const navigate = useNavigate()
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await getAllProducts();  // Supondo que seja uma função assíncrona
-                dispatch({ type: 'INIT', payload: response.dados });  // Despacha os dados para o estado
-            } catch (error) {
-                console.error('Erro ao carregar os produtos', error);
-            }
-        };
+        if (!state.logado) navigate("/login")
+        else {
+            const fetchData = async () => {
+                try {
+                    const response = await getAllProducts();
+                    dispatch({ type: 'INIT', payload: response.dados });
+                } catch (error) {
+                    console.error('Erro ao carregar os produtos', error);
+                }
+            };
 
-        fetchData();
-        // dispatch({ type: "INIT" })
-    }, [])
+            fetchData();
+        }
+    }, [])
 
     return (
         <section className="produtos">
