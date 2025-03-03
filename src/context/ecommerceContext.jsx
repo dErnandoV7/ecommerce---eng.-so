@@ -1,13 +1,12 @@
 import { createContext, useReducer } from "react";
-
 export const EcommerceContext = createContext();
 
 const initialState = {
     todosProdutos: [],
     produtosBuscados: [],
-    logado: false
+    logado: false,
+    user: false
 };
-
 
 const EcommerceReducer = (state, action) => {
     switch (action.type) {
@@ -30,9 +29,9 @@ const EcommerceReducer = (state, action) => {
         case "SET_LOGADO":
             return {
                 ...state,
-                logado: true
+                logado: action.logado
             }
-            
+
         case "VER_STATE":
             console.log(state)
 

@@ -2,29 +2,33 @@ import { useEffect } from "react";
 import { useEcommerce } from "../Hooks/useEcommerContext"
 import { getAllProducts } from "../db/getAllProducts";
 import Produto from "./Produto"
+import { checkUserLogin } from "../db/checkUserLogin";
 
 import "./Produtos.css"
-import { useNavigate } from "react-router-dom";
 
 const Produtos = () => {
     const [state, dispatch] = useEcommerce();
-    const navigate = useNavigate()
+
+    const checkLogin = async () => {
+        const result = await checkUserLogin();
+        return result
+    };
 
     useEffect(() => {
-        if (!state.logado) navigate("/login")
-        else {
-            const fetchData = async () => {
-                try {
-                    const response = await getAllProducts();
-                    dispatch({ type: 'INIT', payload: response.dados });
-                } catch (error) {
-                    console.error('Erro ao carregar os produtos', error);
-                }
-            };
+        const fetchData = async () => {
+            const result = await checkLogin()
+            if (result) dispatch({type: "SET_LOGADO", logado: true})
+                
+            try {
+                const response = await getAllProducts();
+                dispatch({ type: 'INIT', payload: response.dados });
+            } catch (error) {
+                console.error('Erro ao carregar os produtos', error);
+            }
+        };
 
-            fetchData();
-        }
-    }, [])
+        fetchData();
+    }, [])
 
     return (
         <section className="produtos">

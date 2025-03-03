@@ -58,7 +58,7 @@
     border-radius: 4px 0px 0px 4px;
 }
 
-.login-button {
+.login-button, .create-account-button {
     max-width: 350px;
     width: 100%;
     background: var(--verde-1);
@@ -73,7 +73,7 @@
     transition: .3s;
 }
 
-.login-button:hover {
+.login-button:hover, .create-account-button:hover {
     background: #fff;
     border: 2px solid var(--verde-1);
     color: var(--verde-1);
@@ -99,4 +99,102 @@
     color: #ff0000d0;
     border-radius: 2px;
     border: 1px solid #ff000010;
+}
+
+.create-account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #04d404;
+    background: linear-gradient(180deg, #04d404 0%, #0a550a 100%);
+    width: 100vw;
+    height: 100vh;
+}
+
+.create-account-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 22px 0px #00000029;
+    background: #fff;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px 10px;
+    border-radius: 20px 0 20px 0;
+}
+
+.create-account-section h1 {
+    color: var(--verde-1);
+    font-size: 32px;
+}
+
+.create-account-section form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 85%;
+    margin-top: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--verde-2);
+
+}
+
+.create-account-section p {
+    font-size: 14px;
+    text-align: center;
+    color: #838383;
+    margin-bottom: 25px;
+}
+
+.create-account-section p strong {
+    color: var(--verde-1);
+}
+
+.create-account-section h2 {
+    color: var(--verde-1);
+    font-weight: normal;
+    align-self: flex-start;
+    font-size: 12px;
+    border-top: 1px solid var(--verde-2);
+    width: 100%;
+    padding-top: 20px;
+}
+
+.create-account-section form label {
+    display: flex;
+    width: 100%;
+}
+
+.create-account-section form label input {
+    flex: 1;
+    border-radius: 0px 4px 4px 0px;
+    outline: none;
+    height: 44px;
+    font-size: 12px;
+    border: 1px solid var(--verde-2);
+    padding: 4px 4px 4px 8px;
+    color: #393939;
+    letter-spacing: 0.3px;
+}
+
+.create-account-section form label i {
+    width: 45px;
+    padding: 15px 0px;
+    font-size: 14px;
+    background: var(--verde-2);
+    color: var(--verde-1);
+    text-align: center;
+    border-radius: 4px 0px 0px 4px;
+}
+
+.create-account-section .msg-error {
+    color: red;
+    align-self: self-start;
+    font-size: 12px;
+    background: #ff00001e;
+    padding: 4px;
+    border-radius: 2px;
 }

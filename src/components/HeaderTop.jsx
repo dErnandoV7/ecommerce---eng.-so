@@ -1,11 +1,17 @@
 import { useRef } from "react";
 import { useEcommerce } from "../Hooks/useEcommerContext"
 import { Link } from "react-router-dom";
+import { authLogOff } from "../db/authLogOff";
 
 import "./HeaderTop.css"
 const HeaderTop = () => {
     const [state, dispatch] = useEcommerce();
     const ref = useRef()
+
+    const handleLogOff = () => {
+        dispatch({ type: "SET_LOGADO", logado: false })
+        authLogOff()
+    }
 
     return (
         <div className="header-top">
@@ -14,7 +20,7 @@ const HeaderTop = () => {
             </div>
             <div className="header-top-right">
                 <div className="search">
-                    <input type="text" ref={ref} placeholder="Digite o que você procura..." onChange={() => dispatch({type: "BUSCAR_PRODUTOS", search: ref.current.value})} />
+                    <input type="text" ref={ref} placeholder="Digite o que você procura..." onChange={() => dispatch({ type: "BUSCAR_PRODUTOS", search: ref.current.value })} />
                     <i className="fa-solid fa-magnifying-glass"></i>
                 </div>
                 <div className="icon-header">
@@ -29,7 +35,13 @@ const HeaderTop = () => {
                     <i className="fa-solid fa-circle-question"></i>
                     <p><span>Atendimento </span> <strong>e Suporte</strong></p>
                 </div>
-                <Link to={"/login"}><button onClick={() => dispatch({type: "VER_STATE"})}><i className="fa-solid fa-right-to-bracket"></i> Entrar</button></Link>
+                {!state.logado ?
+                    (<Link to={"/login"}><button ><i className="fa-solid fa-right-to-bracket"></i> Entrar</button></Link>)
+                    :
+                    (
+                        <button onClick={() => handleLogOff()}><i className="fa-solid fa-arrow-right-from-bracket"></i></button>
+                    )}
+
             </div>
         </div>
     )
