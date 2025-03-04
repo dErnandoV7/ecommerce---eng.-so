@@ -4,6 +4,7 @@
     align-items: center;
     gap: 20px;
     margin-top: 40px;
+    padding: 4px 10px;
 }
 
 .categorias-section h3 {
@@ -55,14 +56,17 @@
     }
 }
 
+@media (max-width: 500px) {
+    .categoria {
+        width: 100%;
+        max-width: 160px;
+        height: 160px;
+    }
+}
+
 @media (min-width: 455px) {
     .categoria:hover {
         background: var(--roxo-1);
     }
 }
 
-@media (max-width: 455px) {
-    .categorias-section>div {
-        flex-direction: column;
-    }
-}
