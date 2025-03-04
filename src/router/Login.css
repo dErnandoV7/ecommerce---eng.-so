@@ -202,7 +202,7 @@
 }
 
 /* responsividade */
-@media (max-width: 420px) {
+@media (max-width: 480px) {
     .create-account {
         background: #fff;
     }
@@ -210,7 +210,9 @@
     .create-account-section {
         box-shadow: none;
     }
+}
 
+@media (max-width: 420px) {
     .login h1 {
         font-size: 36px;
     }
