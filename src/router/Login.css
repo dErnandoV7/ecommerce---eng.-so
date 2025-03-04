@@ -58,7 +58,8 @@
     border-radius: 4px 0px 0px 4px;
 }
 
-.login-button, .create-account-button {
+.login-button,
+.create-account-button {
     max-width: 350px;
     width: 100%;
     background: var(--verde-1);
@@ -73,7 +74,8 @@
     transition: .3s;
 }
 
-.login-button:hover, .create-account-button:hover {
+.login-button:hover,
+.create-account-button:hover {
     background: #fff;
     border: 2px solid var(--verde-1);
     color: var(--verde-1);
@@ -118,7 +120,7 @@
     justify-content: center;
     box-shadow: 0px 0px 22px 0px #00000029;
     background: #fff;
-    width: 100%;
+    width: 90%;
     max-width: 500px;
     padding: 30px 10px;
     border-radius: 20px 0 20px 0;
@@ -197,4 +199,43 @@
     background: #ff00001e;
     padding: 4px;
     border-radius: 2px;
+}
+
+/* responsividade */
+@media (max-width: 420px) {
+    .create-account {
+        background: #fff;
+    }
+
+    .create-account-section {
+        box-shadow: none;
+    }
+
+    .login h1 {
+        font-size: 36px;
+    }
+
+    .login form label {
+        display: flex;
+        max-width: 300px;
+        width: 90%;
+    }
+
+    .login form label input {
+        height: 40px;
+    }
+
+    .login form label i {
+        height: 40px;
+        padding: 10px;
+    }
+
+    .login-button {
+        max-width: 300px;
+        width: 90%;
+    }
+
+    #error-message {
+        width: max-content;
+    }
 }

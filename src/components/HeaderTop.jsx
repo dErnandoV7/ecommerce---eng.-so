@@ -39,7 +39,9 @@ const HeaderTop = () => {
                     (<Link to={"/login"}><button ><i className="fa-solid fa-right-to-bracket"></i> Entrar</button></Link>)
                     :
                     (
-                        <button onClick={() => handleLogOff()}><i className="fa-solid fa-arrow-right-from-bracket"></i></button>
+                        <div className="user-icon" onClick={() => handleLogOff()}>
+                            <p>a</p>
+                        </div>
                     )}
 
             </div>
