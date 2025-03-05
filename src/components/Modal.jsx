@@ -6,7 +6,7 @@ import Loading from "../components/Loading"
 
 import "./Modal.css"
 
-const Model = ({func}) => {
+const Model = ({ func }) => {
   const { state, dispatch } = useEcommerce()
   const [name, setName] = useState("")
   const [desc, setDesc] = useState("")
@@ -16,6 +16,8 @@ const Model = ({func}) => {
   const [whats, setWhats] = useState("")
   const [emptyFiels, setEmptyFields] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [isSquareImage, setIsSquareImage] = useState(true)
+
   const ref = useRef()
 
   const handleNumericInput = (e, func) => {
@@ -42,8 +44,30 @@ const Model = ({func}) => {
       setLoading(true)
       setEmptyFields(false)
 
-      const result = await uploadImageToCloudinary(file)
+      const isSquareImageFn = await new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.onload = function (event) {
+          const img = new Image();
+          img.onload = () => resolve(img.width === img.height);
+          img.src = event.target.result;
+        };
+        
+        reader.readAsDataURL(file);
+      });
+      
+      if (!isSquareImageFn) {
+        setLoading(false);
+        setIsSquareImage(false)
+        
+        setTimeout(() => {
+          setIsSquareImage(true)
+        }, 3000);
 
+        return;
+      }
+      
+      const result = await uploadImageToCloudinary(file)
+      
       if (result.success) {
         const res = await createProduct(name, desc, price, result.url, whats, category)
 
@@ -111,6 +135,7 @@ const Model = ({func}) => {
               <input type="text" placeholder="Seu Whatsapp" maxLength={11} value={whats} onChange={(e) => handleNumericInput(e, setWhats)} />
             </label>
             {emptyFiels && <p>Preencha todos os campos!</p>}
+            {!isSquareImage && <p>A imagem deve ter proporção de 1:1</p>}
             <div className="buttons-painel">
               <button className="cancelar-cadastro-produto" onClick={() => dispatch({ type: "SET_SHOW_MODAL", showModal: false })}>Cancelar</button>
               <button className="cadastrar-produto" onClick={(e) => createProductFn(e)}>Cadastrar</button>
