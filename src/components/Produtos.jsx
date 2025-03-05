@@ -8,7 +8,7 @@ import { fetchUserData } from "../db/fetchUserData";
 import "./Produtos.css"
 
 const Produtos = () => {
-    const {state, dispatch} = useEcommerce();
+    const { state, dispatch } = useEcommerce();
 
     const checkLogin = async () => {
         const result = await checkUserLogin();
@@ -37,30 +37,91 @@ const Produtos = () => {
         fetchData();
     }, [])
 
+    const produtosComputadores = state.todosProdutos?.filter(produto => produto.category === "Computadores");
+    const produtosPerifericos = state.todosProdutos?.filter(produto => produto.category === "Periféricos");
+    const produtosSmartphones = state.todosProdutos?.filter(produto => produto.category === "Smartphones");
+    const produtosComponentes = state.todosProdutos?.filter(produto => produto.category === "Componentes");
+    const produtosOutro = state.todosProdutos?.filter(produto => produto.category === "Outro");
+
     return (
         <section className="produtos">
-            {
-                state.produtosBuscados && state.produtosBuscados.length > 0
-                    ? state.produtosBuscados.map((produto, index) => (
+            <h3>Produtos por Categoria</h3>
+            <div className="produtos-computadores produtos-sessoes" id="computadores">
+                <h2>Computadores</h2>
+                <div>
+                    {produtosComputadores && produtosComputadores.length > 0 && (produtosComputadores.map((produto, index) => (
                         <Produto
                             key={index}
-                            nome={produto.nome}
-                            descricao={produto.descricao}
-                            valor={produto.valor}
-                            urlImagem={produto.urlImagemProduto}
+                            nome={produto.name}
+                            descricao={produto.desc}
+                            valor={produto.price}
+                            urlImagem={produto.url}
+                            whats={produto.whats}
                         />
-                    ))
-                    : state.todosProdutos.map((produto, index) => (
-                        <Produto
-                            key={index}
-                            nome={produto.nome}
-                            descricao={produto.descricao}
-                            valor={produto.valor}
-                            urlImagem={produto.urlImagemProduto}
-                        />
-                    ))
-            }
+                    )))}
 
+                </div>
+            </div>
+            <div className="produtos-componentes produtos-sessoes" id="componentes">
+                <h2>Componentes</h2>
+                <div>
+                    {produtosComponentes && produtosComponentes.length > 0 && (produtosComponentes.map((produto, index) => (
+                        <Produto
+                            key={index}
+                            nome={produto.name}
+                            descricao={produto.desc}
+                            valor={produto.price}
+                            urlImagem={produto.url}
+                            whats={produto.whats}
+                        />
+                    )))}
+                </div>
+            </div>
+            <div className="produtos-smartphones produtos-sessoes" id="smartphones">
+                <h2>Smartphones & Tablets</h2>
+                <div>
+                    {produtosSmartphones && produtosSmartphones.length > 0 && (produtosSmartphones.map((produto, index) => (
+                        <Produto
+                            key={index}
+                            nome={produto.name}
+                            descricao={produto.desc}
+                            valor={produto.price}
+                            urlImagem={produto.url}
+                            whats={produto.whats}
+                        />
+                    )))}
+                </div>
+            </div>
+            <div className="produtos-perifericos produtos-sessoes" id="perifericos">
+                <h2>Periféricos</h2>
+                <div>
+                    {produtosPerifericos && produtosPerifericos.length > 0 && (produtosPerifericos.map((produto, index) => (
+                        <Produto
+                            key={index}
+                            nome={produto.name}
+                            descricao={produto.desc}
+                            valor={produto.price}
+                            urlImagem={produto.url}
+                            whats={produto.whats}
+                        />
+                    )))}
+                </div>
+            </div>
+            <div className="produtos-outros produtos-sessoes" id="outros">
+                <h2>Outros</h2>
+                <div>
+                    {produtosOutro && produtosOutro.length > 0 && (produtosOutro.map((produto, index) => (
+                        <Produto
+                            key={index}
+                            nome={produto.name}
+                            descricao={produto.desc}
+                            valor={produto.price}
+                            urlImagem={produto.url}
+                            whats={produto.whats}
+                        />
+                    )))}
+                </div>
+            </div>
         </section>
     )
 }

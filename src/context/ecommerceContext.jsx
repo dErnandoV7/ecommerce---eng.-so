@@ -4,6 +4,7 @@ export const EcommerceContext = createContext();
 const initialState = {
     todosProdutos: [],
     produtosBuscados: [],
+    produtosUsuario: [],
     logado: false,
     user: false,
     showSideBar: false,
@@ -21,7 +22,9 @@ const EcommerceReducer = (state, action) => {
         case "BUSCAR_PRODUTOS":
             const lowerCase = (str) => str.toLowerCase()
             const sTodosProdutos = state.todosProdutos
-            let newProdutosProcurados = sTodosProdutos.filter(dado => lowerCase(dado.nome).includes(lowerCase(action.search)))
+            let newProdutosProcurados = sTodosProdutos.filter(dado => lowerCase(dado.name).includes(lowerCase(action.search)))
+
+            if (!action.search) newProdutosProcurados = []
 
             return {
                 ...state,
