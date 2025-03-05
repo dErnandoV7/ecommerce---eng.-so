@@ -3,6 +3,7 @@ import { useEcommerce } from "../Hooks/useEcommerContext"
 import { getAllProducts } from "../db/getAllProducts";
 import Produto from "./Produto"
 import { checkUserLogin } from "../db/checkUserLogin";
+import { fetchUserData } from "../db/fetchUserData";
 
 import "./Produtos.css"
 
@@ -11,14 +12,20 @@ const Produtos = () => {
 
     const checkLogin = async () => {
         const result = await checkUserLogin();
-        return result
+
+        if (result.res) {
+            const resUser = await fetchUserData(result.user.uid)
+            dispatch({ type: "SET_USUARIO", user: resUser })
+        }
+
+        return result.res
     };
 
     useEffect(() => {
         const fetchData = async () => {
             const result = await checkLogin()
-            if (result) dispatch({type: "SET_LOGADO", logado: true})
-                
+            if (result) dispatch({ type: "SET_LOGADO", logado: true })
+
             try {
                 const response = await getAllProducts();
                 dispatch({ type: 'INIT', payload: response.dados });

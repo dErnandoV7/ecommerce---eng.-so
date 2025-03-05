@@ -5,7 +5,8 @@ const initialState = {
     todosProdutos: [],
     produtosBuscados: [],
     logado: false,
-    user: false
+    user: false,
+    showSideBar: false
 };
 
 const EcommerceReducer = (state, action) => {
@@ -32,6 +33,17 @@ const EcommerceReducer = (state, action) => {
                 logado: action.logado
             }
 
+        case "SET_USUARIO":
+            return {
+                ...state,
+                user: action.user
+            }
+        case "SET_SHOW_SIDEBAR":
+
+            return {
+                ...state,
+                showSideBar: action.show
+            }
         case "VER_STATE":
             console.log(state)
 

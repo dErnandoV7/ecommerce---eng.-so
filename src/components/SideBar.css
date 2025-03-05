@@ -1,0 +1,88 @@
+.side-bar {
+    position: fixed;
+    background: var(--cinza-2);
+    padding: 16px 12px;
+    width: 300px;
+    max-width: 40%;
+    height: max-content;
+    z-index: 1;
+    right: 0;
+    transform: translateX(100%);
+    transition: .3s;
+    border-radius: 0 0 4px 4px;
+}
+
+.close-icon {
+    color: #fff;
+    border-radius: 50%;
+    background: #656565;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.user-name {
+    color: #c8c8c8;
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid #5e5d5d;
+    padding-bottom: 6px;
+    margin-bottom: 30px;
+}
+
+.user-name span {
+    color: var(--verde-1);
+    text-transform: capitalize;
+}
+
+.ver-meus-produtos,
+.atendimento {
+    margin-bottom: 10px;
+    padding: 6px;
+    font-size: 12px;
+    background: #4f4e4e;
+    border-radius: 4px;
+    color: #fff;
+    border-top: 1px solid #5e5d5d50;
+    border-bottom: 1px solid #5e5d5d50;
+    cursor: pointer;
+    transition: .3s;
+
+}
+
+.ver-meus-produtos:hover,
+.atendimento:hover {
+    background: #817f7f;
+}
+
+#span-meus-produtos {
+    color: #fff;
+}
+
+.atendimento a {
+    color: #fff;
+}
+
+.logoff-icon {
+    background: red;
+    color: #fff;
+    padding: 6px 4px;
+    font-size: 12px;
+    border-radius: 4px;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.logoff-icon:hover {
+    background: #cf0404;
+}
+
+.show-side-bar {
+    transform: translateX(0);
+}

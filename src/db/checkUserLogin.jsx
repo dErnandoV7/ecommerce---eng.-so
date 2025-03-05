@@ -6,8 +6,8 @@ const auth = getAuth(app);
 export const checkUserLogin = async () => {
     return new Promise((resolve) => {
         onAuthStateChanged(auth, (user) => {
-            if (user) resolve(true)
-            else resolve(false)
+            if (user) resolve({res: true, user})
+            else resolve({res: false})
         });
     });
 };

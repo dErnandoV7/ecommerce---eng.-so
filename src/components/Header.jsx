@@ -1,5 +1,6 @@
 import HeaderTop from './HeaderTop'
 import HeaderBottom from './HeaderBottom'
+import SideBar from './sideBar'
 
 import './Header.css'
 
@@ -8,6 +9,7 @@ const Header = () => {
     <header>
       <HeaderTop />
       <HeaderBottom />
+      <SideBar />
     </header>
   )
 }

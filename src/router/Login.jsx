@@ -38,7 +38,7 @@ const Login = () => {
 
     const checkLogin = async () => {
         const result = await checkUserLogin();
-        return result
+        return result.res
     };
 
     const handleLogin = async (e) => {
