@@ -1,6 +1,6 @@
 import HeaderTop from './HeaderTop'
 import HeaderBottom from './HeaderBottom'
-import SideBar from './sideBar'
+import SideBar from './SideBar'
 
 import './Header.css'
 
