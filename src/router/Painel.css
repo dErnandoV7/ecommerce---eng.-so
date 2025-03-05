@@ -1,3 +1,8 @@
+.painel {
+    min-height: 100vh;
+    position: relative;
+}
+
 .header-painel {
     display: flex;
     justify-content: space-between;
@@ -51,4 +56,50 @@
     font-size: 14px;
     cursor: pointer;
     transition: .3s;
+}
+
+.product-created {
+    opacity: 0;
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    transition: .3s;
+}
+
+.product-created div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-created i {
+    color: var(--verde-1);
+    margin-right: 10px;
+}
+
+.product-created span {
+    font-size: 14px;
+}
+
+@keyframes showAndHide {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.show-temp {
+    animation: showAndHide 2s ease-in-out forwards;
 }

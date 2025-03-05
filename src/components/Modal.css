@@ -1,0 +1,110 @@
+.model-cadastrar-produtos {
+    position: absolute;
+    background: #f2f2f2;
+    width: 90%;
+    max-width: 500px;
+    min-height: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.157);
+    border-radius: 8px;
+}
+
+.cadastrar-produtos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 10px;
+}
+
+.cadastrar-produtos h2 {
+    color: var(--verde-1);
+    font-size: 22px;
+}
+
+.cadastrar-produtos p {
+    font-size: 14px;
+    color: grey;
+    margin-bottom: 20px;
+}
+
+.cadastrar-produtos form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 20px 12px;
+    background: #fffbfb;
+    border-radius: 4px;
+}
+
+.cadastrar-produtos form>p {
+    font-size: 12px;
+    color: red;
+    background: rgba(255, 0, 0, 0.145);
+    padding: 4px;
+    border-radius: 6px;
+}
+
+.cadastrar-produtos form label {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.cadastrar-produtos form label span {
+    font-size: 12px;
+    letter-spacing: .4px;
+    color: var(--cinza-1);
+}
+
+.cadastrar-produtos form label textarea {
+    resize: none;
+    height: 35px;
+    width: 90%;
+    max-width: 300px;
+}
+
+.cadastrar-produtos form label input,
+.cadastrar-produtos form label textarea,
+.cadastrar-produtos form label select {
+    border: 1px solid var(--verde-2);
+    border-radius: 4px;
+    padding: 8px 4px;
+    outline: none;
+}
+
+.input-file {
+    font-size: 10px;
+}
+
+.cadastrar-produtos form .buttons-painel {
+    display: flex;
+    gap: 20px;
+    justify-content: end;
+    border-top: 1px solid #d5d5d5;
+    padding-top: 20px;
+}
+
+.cadastrar-produtos form .buttons-painel button {
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    outline: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.cadastrar-produtos .cancelar-cadastro-produto {
+    border: 1px solid gray;
+    color: #282727;
+    background: #fff;
+    box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.068);
+}
+
+.cadastrar-produtos .cadastrar-produto {
+    background: rgb(21, 185, 249);
+    color: #fff;
+}
