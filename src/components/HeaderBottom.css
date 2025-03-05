@@ -9,6 +9,10 @@
     align-items: center;
 }
 
+.header-bottom .categoria-header a {
+    color: #fff;
+}
+
 .header-bottom .categorias-header .categoria-header {
     text-transform: uppercase;
     color: #fff;
@@ -58,7 +62,9 @@
 }
 
 @media (max-width: 650px) {
-    .header-bottom, .header-bottom .categorias-header {
+
+    .header-bottom,
+    .header-bottom .categorias-header {
         display: none;
     }
 }

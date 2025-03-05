@@ -7,10 +7,10 @@ const HeaderBottom = () => {
     return (
         <div className="header-bottom">
             <nav className="categorias-header">
-                <h2 className="categoria-header">Computadores</h2>
-                <h2 className="categoria-header">Periféricos</h2>
-                <h2 className="categoria-header">Componentes</h2>
-                <h2 className="categoria-header">Smartphones & Tablets</h2>
+                <h2 className="categoria-header"><a href="#computadores">Computadores</a></h2>
+                <h2 className="categoria-header"><a href="#perifericos">Periféricos</a></h2>
+                <h2 className="categoria-header"><a href="#componentes">Componentes</a></h2>
+                <h2 className="categoria-header"><a href="#smartphones">Smartphones & Tablets</a></h2>
             </nav>
         </div>
     )
