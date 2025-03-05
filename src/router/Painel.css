@@ -1,0 +1,54 @@
+.header-painel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--cinza-1);
+    min-height: 70px;
+    padding: 10px;
+
+}
+
+.header-painel>div {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.header-painel .back {
+    color: var(--roxo-1);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.header-painel>div div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 4px;
+}
+
+.header-painel .welcome-message {
+    font-size: 20px;
+    color: #fff;
+    line-height: 16px;
+}
+
+.header-painel .welcome-message strong {
+    color: var(--verde-1);
+    text-transform: capitalize;
+}
+
+.header-painel .welcome-message span {
+    font-size: 14px;
+    color: #c1c1c1;
+}
+
+.header-painel .button-cadastrar-produto {
+    background: var(--verde-1);
+    padding: 6px 12px;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .3s;
+}

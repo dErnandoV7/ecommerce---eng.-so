@@ -9,10 +9,9 @@ import { useEcommerce } from "../Hooks/useEcommerContext"
 import Loading from "../components/Loading"
 
 import "./Login.css"
-import { faNavicon } from "@fortawesome/free-solid-svg-icons"
 
 const Login = () => {
-    const [state, dispatch] = useEcommerce()
+    const { state, dispatch } = useEcommerce()
     const navigate = useNavigate()
     const [password, setPassword] = useState("")
     const [email, setEmail] = useState("")
@@ -62,7 +61,7 @@ const Login = () => {
 
     const handleCreateAccount = async (e) => {
         e.preventDefault()
-        
+
         setError("")
         setLoading(true)
         if (!ccName || !ccSurname || !ccEmail || !ccPassword) {

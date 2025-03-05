@@ -1,12 +1,13 @@
 import { useEcommerce } from "../Hooks/useEcommerContext";
 import { authLogOff } from "../db/authLogOff";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "./SideBar.css"
 
 const SideBar = () => {
-    const [state, dispatch] = useEcommerce()
-
+    const { state, dispatch } = useEcommerce()
+    const navigate = useNavigate()
+    
     const handleLogOff = () => {
         dispatch({ type: "SET_LOGADO", logado: false })
         dispatch({ type: "SET_USUARIO", user: false })
@@ -23,7 +24,7 @@ const SideBar = () => {
             <div className="user-name">
                 <p>Seja bem vindo{"("}a{")"}, <span>{state.user.name}</span>!</p>
             </div>
-            <div className="ver-meus-produtos">
+            <div className="ver-meus-produtos" onClick={() => navigate("/painel")}>
                 <Link to={"/painel"}><span id="span-meus-produtos">Meus produtos</span></Link>
             </div>
             <div className="atendimento">

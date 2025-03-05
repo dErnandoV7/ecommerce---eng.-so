@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import "./HeaderTop.css"
 const HeaderTop = () => {
-    const [state, dispatch] = useEcommerce();
+    const {state, dispatch} = useEcommerce();
     const ref = useRef()
 
     return (

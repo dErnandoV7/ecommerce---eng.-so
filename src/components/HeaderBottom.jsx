@@ -5,7 +5,7 @@ import "./HeaderBottom.css"
 
 const HeaderBottom = () => {
     const ref = useRef()
-    const [state, dispatch] = useEcommerce()
+    const {state, dispatch} = useEcommerce()
     
     return (
         <div className="header-bottom">

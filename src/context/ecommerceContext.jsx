@@ -52,7 +52,11 @@ const EcommerceReducer = (state, action) => {
 }
 
 export const EcommerceContextProvider = ({ children }) => {
-    const data = useReducer(EcommerceReducer, initialState);
+    const [state, dispatch] = useReducer(EcommerceReducer, initialState);
 
-    return <EcommerceContext.Provider value={data}>{children}</EcommerceContext.Provider>;
+    return (
+        <EcommerceContext.Provider value={{ state, dispatch }}>
+            {children}
+        </EcommerceContext.Provider>
+    );
 };

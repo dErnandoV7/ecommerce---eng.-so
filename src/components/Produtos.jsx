@@ -8,7 +8,7 @@ import { fetchUserData } from "../db/fetchUserData";
 import "./Produtos.css"
 
 const Produtos = () => {
-    const [state, dispatch] = useEcommerce();
+    const {state, dispatch} = useEcommerce();
 
     const checkLogin = async () => {
         const result = await checkUserLogin();
