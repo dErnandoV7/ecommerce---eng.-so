@@ -4,6 +4,7 @@ const Footer = () => {
     return (
         <div className='footer'>
             <div className="team">
+                <p>2025, Análise e Desenvolvimento de Sistemas, Prof Anderson Uchôa, UFC-Itapajé</p>
                 <h3>Team</h3>
                 <ul>
                     <li>joseeric2310@gmail.com</li>
