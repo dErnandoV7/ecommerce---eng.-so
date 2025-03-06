@@ -10,7 +10,7 @@ const HeaderTop = () => {
     return (
         <div className="header-top">
             <div className="logo">
-                <img src="images/logo_branca.png" alt="Logo da empresa" onClick={() => dispatch({ type: "VER_STATE" })} />
+                <img src="images/logo_branca.png" alt="Logo da empresa"/>
             </div>
             <div className="header-top-right">
                 <div className="search">

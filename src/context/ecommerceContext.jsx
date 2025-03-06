@@ -54,11 +54,6 @@ const EcommerceReducer = (state, action) => {
                 ...state,
                 showModal: action.showModal
             }
-
-        case "VER_STATE":
-            console.log(state)
-
-            return state
     }
 }
 
