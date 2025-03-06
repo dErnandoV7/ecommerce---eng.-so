@@ -49,7 +49,7 @@ const Produtos = () => {
             <div className="produtos-computadores produtos-sessoes" id="computadores">
                 <h2>Computadores</h2>
                 <div>
-                    {produtosComputadores && produtosComputadores.length > 0 && (produtosComputadores.map((produto, index) => (
+                    {produtosComputadores && produtosComputadores.length > 0 ? (produtosComputadores.map((produto, index) => (
                         <Produto
                             key={index}
                             nome={produto.name}
@@ -58,14 +58,14 @@ const Produtos = () => {
                             urlImagem={produto.url}
                             whats={produto.whats}
                         />
-                    )))}
+                    ))) : (<p><i>Não há produto da categoria Computadores</i></p>)}
 
                 </div>
             </div>
             <div className="produtos-componentes produtos-sessoes" id="componentes">
                 <h2>Componentes</h2>
                 <div>
-                    {produtosComponentes && produtosComponentes.length > 0 && (produtosComponentes.map((produto, index) => (
+                    {produtosComponentes && produtosComponentes.length > 0 ? (produtosComponentes.map((produto, index) => (
                         <Produto
                             key={index}
                             nome={produto.name}
@@ -74,13 +74,13 @@ const Produtos = () => {
                             urlImagem={produto.url}
                             whats={produto.whats}
                         />
-                    )))}
+                    ))) : (<p><i>Não há produto da categoria Componentes</i></p>)}
                 </div>
             </div>
             <div className="produtos-smartphones produtos-sessoes" id="smartphones">
                 <h2>Smartphones & Tablets</h2>
                 <div>
-                    {produtosSmartphones && produtosSmartphones.length > 0 && (produtosSmartphones.map((produto, index) => (
+                    {produtosSmartphones && produtosSmartphones.length > 0 ? (produtosSmartphones.map((produto, index) => (
                         <Produto
                             key={index}
                             nome={produto.name}
@@ -88,16 +88,14 @@ const Produtos = () => {
                             valor={produto.price}
                             urlImagem={produto.url}
                             whats={produto.whats}
-                            id={""}
-                            painel={false}
                         />
-                    )))}
+                    ))) : (<p><i>Não há produto da categoria Smartphones & Tablets</i></p>)}
                 </div>
             </div>
             <div className="produtos-perifericos produtos-sessoes" id="perifericos">
                 <h2>Periféricos</h2>
                 <div>
-                    {produtosPerifericos && produtosPerifericos.length > 0 && (produtosPerifericos.map((produto, index) => (
+                    {produtosPerifericos && produtosPerifericos.length > 0 ? (produtosPerifericos.map((produto, index) => (
                         <Produto
                             key={index}
                             nome={produto.name}
@@ -106,13 +104,13 @@ const Produtos = () => {
                             urlImagem={produto.url}
                             whats={produto.whats}
                         />
-                    )))}
+                    ))) : (<p><i>Não há produto da categoria Periféricos</i></p>)}
                 </div>
             </div>
             <div className="produtos-outros produtos-sessoes" id="outros">
                 <h2>Outros</h2>
                 <div>
-                    {produtosOutro && produtosOutro.length > 0 && (produtosOutro.map((produto, index) => (
+                    {produtosOutro && produtosOutro.length > 0 ? (produtosOutro.map((produto, index) => (
                         <Produto
                             key={index}
                             nome={produto.name}
@@ -121,7 +119,7 @@ const Produtos = () => {
                             urlImagem={produto.url}
                             whats={produto.whats}
                         />
-                    )))}
+                    ))) : (<p><i>Não há produto da categoria Outros</i></p>)}
                 </div>
             </div>
         </section>

@@ -131,6 +131,12 @@
     font-size: 12px;
 }
 
+@media (max-width:670px) {
+    .products-user {
+        justify-content: center;
+    }
+}
+
 @media (max-width: 630px) {
     .products-user-section {
         max-width: 100%;

@@ -6,6 +6,7 @@ import { fetchUserData } from "../db/fetchUserData";
 import { fetchUserProducts } from "../db/fetchUserProducts";
 import Produto from "../components/Produto";
 import Modal from "../components/Modal";
+import Footer from "../components/Footer";
 
 import "./Painel.css";
 
@@ -32,6 +33,7 @@ const Painel = () => {
     const showMessegePCreated = () => {
         ref.current.classList.toggle("show-temp", false);
         ref.current.classList.toggle("show-temp", true);
+        window.location.reload();
     };
 
     useEffect(() => {
@@ -95,6 +97,7 @@ const Painel = () => {
                     </div>
                 </section>
             </div>
+            <Footer />
         </>
     );
 };

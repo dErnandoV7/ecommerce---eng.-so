@@ -7,13 +7,18 @@ import "./SideBar.css"
 const SideBar = () => {
     const { state, dispatch } = useEcommerce()
     const navigate = useNavigate()
-    
+
     const handleLogOff = () => {
         dispatch({ type: "SET_LOGADO", logado: false })
         dispatch({ type: "SET_USUARIO", user: false })
         dispatch({ type: "SET_SHOW_SIDEBAR", show: false })
 
         authLogOff()
+    }
+
+    const changePath = () => {
+        dispatch({ type: "SET_SHOW_SIDEBAR", show: false })
+        navigate("/painel")
     }
 
     return (
@@ -24,8 +29,8 @@ const SideBar = () => {
             <div className="user-name">
                 <p>Seja bem vindo{"("}a{")"}, <span>{state.user.name}</span>!</p>
             </div>
-            <div className="ver-meus-produtos" onClick={() => navigate("/painel")}>
-                <Link to={"/painel"}><span id="span-meus-produtos">Meus produtos</span></Link>
+            <div className="ver-meus-produtos" onClick={() => changePath()}>
+                <button><span id="span-meus-produtos">Meus produtos</span></button>
             </div>
             <div className="atendimento">
                 <a href="https://mail.google.com/mail/?view=cm&to=d.ernandov7@gmail.com&subject=Assunto%20Aqui&body=Escreva%20sua%20mensagem%20aqui
