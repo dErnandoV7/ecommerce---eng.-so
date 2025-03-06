@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { checkUserLogin } from "../db/checkUserLogin";
 import { fetchUserData } from "../db/fetchUserData";
 import { fetchUserProducts } from "../db/fetchUserProducts";
-
+import Produto from "../components/Produto";
 import Modal from "../components/Modal";
 
 import "./Painel.css";
@@ -22,7 +22,7 @@ const Painel = () => {
         if (result.res) {
             const resUser = await fetchUserData(result.user.uid);
             dispatch({ type: "SET_USUARIO", user: resUser });
-            
+
             const products = await fetchUserProducts(result.user.uid);
             setUserProducts(products);
         }
@@ -73,19 +73,23 @@ const Painel = () => {
                     <h3>Todos os seus produtos: </h3>
                     <div className="products-user">
                         {loading ? (
-                            <p>Carregando produtos...</p>
+                            <p className="loading-product">Carregando produtos...</p>
                         ) : (
                             userProducts.length > 0 ? (
-                                userProducts.map((product, index) => (
-                                    <div key={index} className="product-item">
-                                        <h4>{product.name}</h4>
-                                        <p>{product.desc}</p>
-                                        <p>Preço: {product.price}</p>
-                                        <p>Categoria: {product.category}</p>
-                                    </div>
+                                userProducts.map((produto, index) => (
+                                    <Produto
+                                        key={index}
+                                        nome={produto.name}
+                                        descricao={produto.desc}
+                                        valor={produto.price}
+                                        urlImagem={produto.url}
+                                        whats={produto.whats}
+                                        id={produto.id}
+                                        painel={true}
+                                    />
                                 ))
                             ) : (
-                                <p>Você não tem produtos cadastrados.</p>
+                                <p className="loading-product">Você não tem produtos cadastrados.</p>
                             )
                         )}
                     </div>

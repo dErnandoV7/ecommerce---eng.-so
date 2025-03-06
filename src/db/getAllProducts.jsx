@@ -10,7 +10,7 @@ export const getAllProducts = async () => {
     try {
         const snapshot = await getDocs(colecaoRef);
         snapshot.forEach((doc) => {
-            dados.push(doc.data());
+            dados.push({ id: doc.id, ...doc.data() });
         });
     } catch (error) {
         console.error("Erro ao buscar documentos:", error);

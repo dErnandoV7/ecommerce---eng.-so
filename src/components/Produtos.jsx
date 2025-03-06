@@ -88,6 +88,8 @@ const Produtos = () => {
                             valor={produto.price}
                             urlImagem={produto.url}
                             whats={produto.whats}
+                            id={""}
+                            painel={false}
                         />
                     )))}
                 </div>
